@@ -1,0 +1,20 @@
+// Define a route to serve file content
+app.get('/uploads/:folder/:file', async (req, res) => {
+  const { folder, file } = req.params;
+  const filePath = path.join(__dirname, 'uploads', folder, file);
+  try {
+    // Check if the file exists
+    await fs.access(filePath);
+
+    // Set the correct Content-Type header based on the file type
+    const contentType = mime.getType(filePath) || 'application/octet-stream';
+    res.setHeader('Content-Type', contentType);
+
+    // Stream the file to the response
+    const fileStream = fs.createReadStream(filePath);
+    fileStream.pipe(res);
+  } catch (error) {
+    // File not found or other error
+    res.status(404).send('File not found');
+  }
+});
