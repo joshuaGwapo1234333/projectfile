@@ -21,17 +21,6 @@ const upload = multer({ storage });
 
 app.use(express.static('public'));
 
-// Define a route to serve file content
-app.get('/files', (req, res) => {
-  const file = req.params.filename;
-  fs.readFile(`uploads/${folder}/${file}`, 'utf8', (err, data) => {
-    if (err) {
-      res.status(500).json({ message: 'Failed to view file' });
-    } else {
-      res.send(data);
-    }
-  });
-});
 
 
 app.get('/files', (req, res) => {
