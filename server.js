@@ -9,7 +9,7 @@ const port = 3000;
 const storage = multer.diskStorage({
   destination: (req, file, cb) => {
     const folder = req.params.folder || '';
-    const uploadPath = path.join(__dirname, 'uplN oads', folder);
+    const uploadPath = path.join(__dirname, 'uploads', folder);
     cb(null, uploadPath);
   },
   filename: (req, file, cb) => {
