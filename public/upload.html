@@ -1,19 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css" />
     <title>File Upload</title>
-</head>
-<body><div class="container">
-    <h1>Upload Files to Folder: <span id="currentFolder"></span></h1></div>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Upload Files to Folder: <span id="currentFolder"></span></h1>
+    </div>
     <div class="centeraddfold">
-         <input type="file" id="fileInput" />
-    <button id="createFolderBtn" class="createFolderBtn" onclick="uploadFile()">Upload</button>
+      <input type="file" id="fileInput" />
+      <button
+        id="createFolderBtn"
+        class="createFolderBtn"
+        onclick="uploadFile()">
+        Upload
+      </button>
     </div>
     <ul id="fileList"></ul>
 
-    <script src="script.js"></script>
-</body>
+    <script src="js/script.js"></script>
+  </body>
 </html>
